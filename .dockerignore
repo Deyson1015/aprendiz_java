@@ -1,0 +1,24 @@
+# Ignorar todo lo que no sea necesario para construir la imagen
+
+# VCS
+.git
+.gitignore
+.idea
+.vscode
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+.mvn/
+target/
+
+# Archivos locales
+*.log
+*.tmp
+*.swp
+.DS_Store
+HELP.md
+
+# Entornos
+.env
+.env.*
+

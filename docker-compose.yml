@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: aprendiz-api:latest
+    container_name: aprendiz-api
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      # Valores por defecto si no están en .env
+      - PORT=${PORT:-8080}
+      - DATABASE_URL=${DATABASE_URL}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DRIVER=${DB_DRIVER:-com.mysql.cj.jdbc.Driver}
+      - JPA_SHOW_SQL=${JPA_SHOW_SQL:-true}
+      - JPA_DDL_AUTO=${JPA_DDL_AUTO:-update}
+      - JPA_DATABASE_PLATFORM=${JPA_DATABASE_PLATFORM:-org.hibernate.dialect.MySQLDialect}
+    restart: unless-stopped
+
