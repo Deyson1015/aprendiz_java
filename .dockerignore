@@ -20,5 +20,5 @@ HELP.md
 
 # Entornos
 .env
-.env.*
+.env.template
 
